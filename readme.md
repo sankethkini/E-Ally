@@ -6,7 +6,7 @@ It's is website which is used to help developers who want to learn skills with h
 # Process
 This system will help one to see for partner who can teach him skills at the cost of teaching some other skill to his/her partner
 This system work same as traditional bartar system
-We have used Node.js  for , express.js for ,mongodb as database ,mongoose for 
+We have used Node.js  for server, express.js as node framework,mongodb as database ,mongoose as mongodb object modelling tool.
 
 # User Entry 
 If he/she is a new user he/she has to signup first and select his tech ( basically skills to give and gain )
