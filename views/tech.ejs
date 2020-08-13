@@ -1,0 +1,84 @@
+<%- include("partials/header.ejs"); -%>
+
+
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">Tech Stack</h1>
+        <p class="lead">Hey <strong><%= urname %></strong> Here you can change/add about Skills.</p>
+      </div>
+</div>
+
+<br><br>
+<section id="learnt">
+    <div class="container">
+        <div class="row">
+          
+         <form action="/user/<%= urname %>/tech" method="POST">
+
+
+            <div class="col-md-6 border-right">
+              <h4><strong>Skills to Give.</strong></h4>
+            <div class="funkyradio">
+              <div class="funkyradio-primary">
+                <input type="radio" name="radio" id="radio1" value="1"/>
+                <label for="radio1">Artificial Intelligence</label>
+              </div>
+              <div class="funkyradio-primary">
+                  <input type="radio" name="radio" id="radio2" value="2"/>
+                  <label for="radio2">Blockchain</label>
+              </div>
+             <div class="funkyradio-primary">
+              <input type="radio" name="radio" id="radio4" value="3"/>
+              <label for="radio4">Full Stack Dev.</label>
+             </div>
+             <div class="funkyradio-primary">
+              <input type="radio" name="radio" id="radio5" value="4"/>
+              <label for="radio5">DevOps</label>
+             </div>
+             <div class="funkyradio-primary">
+              <input type="radio" name="radio" id="radio6" value="5"/>
+              <label for="radio6">Cloud Computing</label>
+             </div>
+            </div>
+          </div>
+          
+          <div class="col-md-6">
+            <div class="funkyradio">
+              <h4><strong>Skills to Gain.</strong></h4>
+            <div class="funkyradio-success">
+                <input type="radio" name="radio1" id="radio7" value="1" />
+                <label for="radio7">Artificial Intelligence</label>
+            </div>
+            <div class="funkyradio-success">
+              <input type="radio" name="radio1" id="radio8" value="2"/>
+              <label for="radio8">Blockchain</label>
+            </div>
+              <div class="funkyradio-success">
+                <input type="radio" name="radio1" id="radio10"value="3"/>
+                <label for="radio10">Full Stack Dev.</label>
+              </div>
+              <div class="funkyradio-success">
+                <input type="radio" name="radio1" id="radio11" value="4"/>
+                <label for="radio11">DevOps</label>
+              </div>
+              <div class="funkyradio-success">
+                <input type="radio" name="radio1" id="radio12" value="5"/>
+                <label for="radio12">Cloud Computing</label>
+            </div>
+            </div>
+            <br>
+          </div>
+         
+          <div class="container">
+            
+          <input type="submit" value="tech" class="btn btn-primary">
+          </div>
+          </form>
+          </div>
+          <br>
+          <br>
+    </div>
+</section>
+
+
+<%- include ("partials/footer.ejs"); -%>

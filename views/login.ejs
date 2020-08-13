@@ -1,0 +1,26 @@
+<%- include("partials/header"); -%>
+<form action="/login" class="container" method="POST">
+  <br>
+  <h1>Login Form <i class="fa fa-sign-in"></i></h1>
+  <div class="form-row">
+    <div class="form-group col-md-5">
+      <label for="exampleInputuser">User Name</label>
+      <input type="text" name="usname" class="form-control" id="exampleInputuser" aria-describedby="emailHelp" placeholder="Your email" required>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-5">
+      <label for="exampleInputPassword1">Password </label>
+      <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Your password" required>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <button type="submit" class="btn btn-info">Login</button>
+    </div>			
+  </div>
+<br>
+</form>
+<%- include ("partials/footer.ejs"); -%>
+
+

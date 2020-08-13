@@ -1,0 +1,255 @@
+<%- include("partials/header"); -%>
+<section>
+    <div class="pre">
+      <% var k=gn %>
+      <% if(k==1) { %>
+      
+          <a href="#"><img src="/ai.png" alt="course"></a>
+      <% } else if(k==2) { %>
+        <a href="#"><img src="/blockchain.png" alt="course"></a>
+       <% } else if(k==3) { %>
+        <a href="#"><img src="/fullstack.png" alt="course"></a>
+      <% } else if(k==4) { %>
+        <a href="#"><img src="/devops.png" alt="course"></a>
+      <% } else if(k==5) { %>
+        <a href="#"><img src="/cloud.png" alt="course"></a>
+      <% } else { %>
+        <a href="#"><img src="/ai.png" alt="course"></a>
+      <% }  %>
+    </div>
+  
+  </section>
+  <br>
+  <section>
+    <br>
+    <br>
+    <hr>
+    <div class="container">
+      <% var url="/user/"+urname+"/tech" %>
+      <h3>Click here if you want to change your tech</h3><a type="button" class="btn btn-primary" href=<%=url%>>Tech Change</a>
+    </div>
+    <hr>
+<div class="container oth">
+  <br>
+  <hr>
+  <% var tec= {'1':"AI",'2':"blockchain",'3':"full stack",'4':"devops",'5':"cloud"} %>
+ <h1>Matched users :</h1>
+ <p>These users can teach you blockhain and gain the skills which are you ready to give</p>
+ <hr>
+  <% users.forEach(function(user){ %>
+  <% var github= "https://github.com/"+ user.github %>
+  <div class="card">
+    <img src="https://i.pinimg.com/474x/52/37/6f/52376fbee86bf0cef848471de7f3c5af.jpg" alt="John" style="width:100%">
+    <br>
+    <h3><b><%=user.uname%></b></h3>
+    <p class="title">E-learn Member</p>
+    <p><%= tec[user.gain] %> Enthusiast.</p> 
+    <div class="popup" onclick="func('<%=user.uname %>')"><strong>Contact</strong>
+      <span class="popuptext" id=<%=user.uname %>>Email id:<a href="#"><%=user.email %></a><br>Github:<a href=<%= github %> target="_blank"><%= user.github %></a></span>
+      <br>
+      <br>
+    </div>     
+  </div>
+  <br>
+  <br>
+  <% }) %>
+</div>
+<div class="container oth">
+  <h1>Other users are :</h1>
+  <hr>
+   <% mat.forEach(function(user){ %>
+   <% var github= "https://github.com/"+ user.github %>
+   <div class="card">
+     <img src="https://i.pinimg.com/474x/52/37/6f/52376fbee86bf0cef848471de7f3c5af.jpg" alt="John" style="width:100%">
+     <br>
+     <h3><b><%=user.uname%></b></h3>
+     <p class="title">E-learn Member</p>
+     <p><%= tec[user.gain] %> Enthusiast.</p> 
+     <div class="popup" onclick="func('<%=user.uname %>')"><strong>Contact</strong>
+       <span class="popuptext" id=<%=user.uname %>>Email id:<a href="#"><%=user.email %></a><br>Github:<a href=<%= github %> target="_blank"><%= user.github %></a></span>
+       <br>
+       <br>
+     </div>     
+   </div>
+   <br>
+   <br>
+   <% }) %>
+ </div>
+ 
+</section>
+<script>
+
+  function func(id){
+    var popup = document.getElementById(id);
+    popup.classList.toggle("show");
+  }
+</script>
+
+<%- include("partials/footer"); -%>
+<!---
+<% for (var i =1; i <=10;  i++ ) { %>
+  <br/>  <%= i %> 
+  <%#  will output the numbers 1-10 %>
+  <% } %>
+
+var elms = document.getElementById(id);
+
+    for(var i = 0; i < elms.length; i++) 
+      elms[i].classList.toggle("show");
+
+
+
+  <div class="card">
+    <img src="https://raw.githubusercontent.com/talha08/talha08.github.io/master/images/photo.jpg" alt="John" style="width:100%">
+    <br>
+    <h3><b>MD. ABU TALHA</b></h3>
+    <p class="title">Full Stack Web Developer</p>
+    <p>InfancyIT</p>
+    <p><a href="talha08.github.io" class="button">Profile</a></p>
+  </div>
+  <br> -->
+  <!-- <% users.forEach(function(user){ %>
+    <li><%=user.uname%></li>
+  <% }) %> -->
+
+
+
+
+<!-- 
+
+  /* .pre{
+    background-color: black;    
+}
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+  }
+  
+  .title {
+    color: grey;
+    font-size: 18px;
+  }
+  
+  .button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #3498DB;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+  }
+  
+  a {
+    text-decoration: none;
+    font-size: 22px;
+    color: black;
+  }
+  
+  button:hover, a:hover {
+    opacity: 0.7;
+  }
+ 
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  
+  .popup {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  a{
+    color: bisque;
+  }
+  
+  /* The actual popup */
+  .popup .popuptext {
+    visibility: hidden;
+    width: 400px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -80px;
+  }
+  
+  /* Popup arrow */
+  .popup .popuptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+  }
+  
+  /* Toggle this class - hide and show the popup */
+  .popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+  }
+  
+  /* Add animation (fade in the popup) */
+  @-webkit-keyframes fadeIn {
+    from {opacity: 0;} 
+    to {opacity: 1;}
+  }
+  
+  @keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+  }   -->
